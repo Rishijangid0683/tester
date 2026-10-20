@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { HexclaveProvider, HexclaveTheme } from "@hexclave/next";
-import { hexclaveClientApp } from "../stack/client";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
@@ -34,7 +32,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="font-sans antialiased"><HexclaveProvider app={hexclaveClientApp}><HexclaveTheme>
+      <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -45,7 +43,7 @@ export default function RootLayout({
           {children}
           <h1>Footer</h1>
         </ThemeProvider>
-      </HexclaveTheme></HexclaveProvider></body>
+      </body>
     </html>
   );
 }
