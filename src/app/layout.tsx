@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HexclaveProvider, HexclaveTheme } from "@hexclave/next";
 import { hexclaveClientApp } from "../stack/client";
 import localFont from "next/font/local";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
