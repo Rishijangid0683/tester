@@ -1,6 +1,9 @@
 export default function Loading() {
-
-  // Stack uses React Suspense, which will render this page while user data is being fetched.
+  // Stack Auth uses React Suspense; this renders while user data is being fetched.
   // See: https://nextjs.org/docs/app/api-reference/file-conventions/loading
-  return <></>;
+  return (
+    <div className="flex min-h-screen items-center justify-center">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-muted border-t-foreground" />
+    </div>
+  );
 }

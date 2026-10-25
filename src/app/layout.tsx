@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { HexclaveProvider, HexclaveTheme } from "@stackframe/stack";
+import { hexclaveServerApp } from "@/stack/server";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,16 +35,20 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-          <h1>Footers</h1>
-        </ThemeProvider>
+        <HexclaveProvider app={hexclaveServerApp}>
+          <HexclaveTheme>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Navbar />
+              {children}
+              <h1>Footers</h1>
+            </ThemeProvider>
+          </HexclaveTheme>
+        </HexclaveProvider>
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
-import { HexclaveClientApp } from "@hexclave/next";
+"use client";
+import { StackClientApp } from "@stackframe/stack";
+import { stackConfig } from "../../stack.config";
 
-export const hexclaveClientApp = new HexclaveClientApp({
-  tokenStore: "nextjs-cookie",
-});
+export const stackClientApp = new StackClientApp(stackConfig);
